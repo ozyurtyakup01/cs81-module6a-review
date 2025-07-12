@@ -21,21 +21,27 @@ Playlist.prototype.playFirst = function() {
 };
 
 Playlist.prototype.skipSong = function() {
+    //check if there is another element to skip
   if (this.songs.length > 1) {
+    // remove first element
     this.songs.shift();
+    // currentsong is new first element
     this.currentSong = this.songs[0];
+    // print new current song
     console.log("Skipped! Now playing:", this.currentSong);
   } else {
+    // 1 or less element in array, error
     console.log("No more songs to skip.");
   }
 };
-
+// getter function
 Playlist.prototype.listSongs = function() {
   console.log("Playlist:", this.name);
+  // print songs in a single string
   console.log("Songs:", this.songs.join(", "));
 };
 
-
+// test
 let myMix = new Playlist("My Chill Mix");
 myMix.addSong("Lofi Study");
 myMix.addSong("Chillhop Beats");
