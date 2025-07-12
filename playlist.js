@@ -1,4 +1,7 @@
-// default constructor
+
+// "this" refers new Playlist object in each
+
+// constructor
 function Playlist(name) {
   this.name = name;
   this.songs = [];
@@ -13,7 +16,7 @@ Playlist.prototype.addSong = function(songTitle) {
 Playlist.prototype.playFirst = function() {
   //check if array is empty
   if (this.songs.length > 0) {
-    //if not empty set current song to first element
+    //if not empty set current song to the first element
     this.currentSong = this.songs[0];
     // print new current song
     console.log("Now playing:", this.currentSong);
